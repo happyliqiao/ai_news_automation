@@ -1,0 +1,8 @@
+__pycache__/
+*.py[cod]
+logs/
+*.log
+*.docx
+.env
+.DS_Store
+Thumbs.db
