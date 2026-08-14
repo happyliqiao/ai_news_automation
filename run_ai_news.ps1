@@ -1,13 +1,16 @@
-param(
+﻿param(
     [ValidateSet("all", "ai", "general")]
     [string]$Report = "all"
 )
 
 $ErrorActionPreference = "Stop"
 
+# 让 Python 以 UTF-8 输出日志，避免中文乱码
+$env:PYTHONIOENCODING = "utf-8"
+
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Python = "C:\Users\liqiao\AppData\Local\Programs\Python\Python313\python.exe"
-$OutputDir = "E:\AI"
+$OutputDir = Join-Path $ScriptDir "output"
 $LogDir = Join-Path $OutputDir "logs"
 
 if (-not (Test-Path -LiteralPath $Python)) {

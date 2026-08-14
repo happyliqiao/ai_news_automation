@@ -1,6 +1,7 @@
 __pycache__/
 *.py[cod]
 logs/
+output/
 *.log
 *.docx
 .env

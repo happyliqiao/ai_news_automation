@@ -1,4 +1,4 @@
-$ErrorActionPreference = "Stop"
+﻿$ErrorActionPreference = "Stop"
 
 $TaskName = "AI News Daily Report"
 $ScriptPath = Join-Path $PSScriptRoot "run_ai_news.ps1"
@@ -30,9 +30,9 @@ Register-ScheduledTask `
     -Trigger $Trigger `
     -Principal $Principal `
     -Settings $Settings `
-    -Description "每天早上 9:00 自动生成 AI 相关新闻日报和大杂烩新闻日报到 E:\AI" `
+    -Description "每天早上 9:00 自动生成 AI 相关新闻日报和大杂烩新闻日报到项目目录下的 output 文件夹" `
     -Force | Out-Null
 
 Write-Host "已创建/更新计划任务：$TaskName"
 Write-Host "每天执行时间：09:00"
-Write-Host "输出目录：E:\AI"
+Write-Host "输出目录：$PSScriptRoot\output"
